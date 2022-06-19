@@ -136,7 +136,6 @@ const App = () => {
     const iname = e.target.name
     if (iname.includes('address') || iname.includes('social')) {
       const [fname, idx] = iname.split('-')
-      console.log(fname, idx)
       setRecord(d => {
         let value = d[fname]
         value[idx] = e.target.value
@@ -145,7 +144,6 @@ const App = () => {
         }
       })
     } else {
-      console.log('string')
       setRecord(() => {
         return {
           [iname]: e.target.value
@@ -153,7 +151,7 @@ const App = () => {
       })
     }
 
-    console.log(record)
+    // console.log(record)
   }
 
   return (

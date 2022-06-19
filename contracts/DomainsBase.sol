@@ -20,7 +20,13 @@ contract DomainsBase {
   mapping(string => address) public domains;
   mapping(string => DomainInfo) public records;
 
+  mapping (uint => string) public names;
+
   event NewDomain(uint domainId, string name);
+
+  error Unauthorized();
+  error AlreadyRegistered();
+  error InvalidName(string name);
 
   function price(string calldata name) public pure returns(uint) {
     uint len = StringUtils.strlen(name);
@@ -46,7 +52,7 @@ contract DomainsBase {
     string[] memory _accounts,
     string[] memory _addresses
   ) public {
-    require(domains[name] == msg.sender);
+    if (msg.sender != domains[name]) revert Unauthorized();
     records[name] =  DomainInfo(name, _url, _picture, _description, _accounts, _addresses);
   }
 
