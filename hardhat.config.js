@@ -25,6 +25,11 @@ module.exports = {
       url: 'http://127.0.0.1:7545',
       accounts: privateKeys.split(','),
     },
+    mumbai: {
+      chainId: 80001,
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_MUMBAI_API_KEY}`,
+      accounts: privateKeys.split(','),
+    },
     rinkeby: {
       chainId: 5,
       url: `https://eth-rinkeby.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
