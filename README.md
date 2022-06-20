@@ -4,6 +4,14 @@ This project is the result of buildspace's [Build your own domain service on a P
 
 It uses hardhat and react, a lot of custom hooks to connect to metamask, change the network to polygon's mumbai testnet, etc.
 
+## NFT
+
+You receive an NFT certificate for each buildspace project finished. Here is the one for the ENS project:
+
+![](public/nft-ens.gif)
+
+You can check it at [OpenSea](https://opensea.io/assets/matic/0x3CD266509D127d0Eac42f4474F57D0526804b44e/20121?force_update=true) as well.
+
 ## Live demo
 
 [DEV Name Server](https://ens-clone-gmuo92llc-brunoscholz.vercel.app/)
