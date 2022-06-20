@@ -1,15 +1,33 @@
-# Basic Sample Hardhat Project
+# Basic DNS with NFTs
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project is the result of buildspace's [Build your own domain service on a Polygon L2 in a weekend](https://buildspace.so/p/build-polygon-ens).
 
-Try running some of the following tasks:
+It uses hardhat and react, a lot of custom hooks to connect to metamask, change the network to polygon's mumbai testnet, etc.
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
+## Live demo
+
+[DEV Name Server](https://ens-clone-gmuo92llc-brunoscholz.vercel.app/)
+
+## Development
+
 ```
+$ git clone https://github.com/brunoscholz/ens-clone.git
+```
+
+Create a .env file and place the following variables:
+
+```
+PRIVATE_KEYS="..."
+ALCHEMY_MUMBAI_API_KEY=...
+```
+
+ALCHEMY_MUMBAI_API_KEY is the secret key of your app. You can create one [here](https://www.alchemy.com/).
+
+
+```
+$ yarn && yarn start
+```
+
+Go to [localhost:3000](http://localhost:3000)
+
+You must have the [Metamask extension](https://metamask.io/download/) on your browser.
