@@ -9,7 +9,7 @@ p {
   margin:0;
 }
 
-.container {
+.wrapper {
   height: 100%;
   background-color: #181818;
   display: flex;
@@ -26,6 +26,11 @@ header{
   flex-direction: row;
   justify-content: space-between;
   padding: 10px 10px 10px 10px;
+}
+
+header .address {
+  background: rgb(2,0,36);
+  background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(7,0,184,1) 0%, rgba(0,255,136,1) 100%);
 }
 
 .title {
@@ -166,7 +171,7 @@ header{
   align-items: center;
 }
 
-input{
+input, textarea {
   border: 0;
   border-radius: 12px;
   background-color: black;
@@ -179,13 +184,17 @@ input{
   text-align: center;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: gray;
   letter-spacing: 2px;
 }
 
-input:focus {
+input:focus, textarea:focus {
   outline: none;
+}
+
+textarea {
+  height: 128px;
 }
 
 .first-row{
@@ -205,7 +214,7 @@ input:focus {
   color: white;
   /* left: -70px; */
   right: 22px;
-  margin: 0;  
+  margin: 0;
   padding: 0;
   margin-bottom: 13px;
 }

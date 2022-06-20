@@ -3,7 +3,6 @@ pragma solidity >=0.4.22 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import { Base64 } from "./libraries/Base64.sol";
 import "hardhat/console.sol";
 import "./DomainsBase.sol";
 
@@ -20,7 +19,6 @@ contract Domains is DomainsBase, ERC721URIStorage {
     owner = payable(msg.sender);
     tld = _tld;
     console.log("%s name service deployed", _tld);
-    _tokenIds.increment();
   }
 
   function register(string calldata name) public payable {

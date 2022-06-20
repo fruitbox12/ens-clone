@@ -2,6 +2,7 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 import { StringUtils } from "./libraries/StringUtils.sol";
+import { Base64 } from "./libraries/Base64.sol";
 import "hardhat/console.sol";
 
 contract DomainsBase {
@@ -11,8 +12,8 @@ contract DomainsBase {
     string url;
     string picture;
     string description;
-    string[] accounts;
-    string[] addresses;
+    string accounts;
+    string addresses;
   }
 
   string public tld;
@@ -49,14 +50,14 @@ contract DomainsBase {
     string memory _url,
     string memory _picture,
     string memory _description,
-    string[] memory _accounts,
-    string[] memory _addresses
+    string memory _accounts,
+    string memory _addresses
   ) public {
     if (msg.sender != domains[name]) revert Unauthorized();
     records[name] =  DomainInfo(name, _url, _picture, _description, _accounts, _addresses);
   }
 
   function getRecord(string calldata name) public view returns(DomainInfo memory) {
-    return records[name];
+    return (records[name]);
   }
 }
