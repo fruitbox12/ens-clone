@@ -15,7 +15,7 @@ contract Domains is DomainsBase, ERC721URIStorage {
 
   address payable public owner;
 
-  constructor(string memory _tld) payable ERC721("DEV Name Service", "DNS") {
+  constructor(string memory _tld) payable ERC721("ZAP Name Service", "ZNS") {
     owner = payable(msg.sender);
     tld = _tld;
     console.log("%s name service deployed", _tld);
@@ -26,7 +26,7 @@ contract Domains is DomainsBase, ERC721URIStorage {
     if (!valid(name)) revert InvalidName(name);
 
     uint256 _price = price(name);
-    require(msg.value >= _price, "Not enough Matic paid");
+    require(msg.value >= _price, "Not enough ZAP paid");
 
     // Combine the name passed into the function  with the TLD
     string memory _name = string(abi.encodePacked(name, ".", tld));
@@ -43,7 +43,7 @@ contract Domains is DomainsBase, ERC721URIStorage {
       abi.encodePacked(
         '{"name": "',
         _name,
-        '", "description": "A domain on the DEV name service", "image": "data:image/svg+xml;base64,',
+        '", "description": "A domain on the ZAP name service", "image": "data:image/svg+xml;base64,',
         Base64.encode(bytes(finalSvg)),
         '","length":"',
         strLen,
