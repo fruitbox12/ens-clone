@@ -17,7 +17,7 @@ contract Domains is DomainsBase, ERC721URIStorage {
 
   constructor(string memory _tld) payable ERC721("ZAP Name Service", "ZNS") {
     owner = payable(msg.sender);
-    tld = _tld;
+    tld = "zap";
     console.log("%s name service deployed", _tld);
   }
 
