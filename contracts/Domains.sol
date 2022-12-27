@@ -82,7 +82,7 @@ contract Domains is DomainsBase, ERC721URIStorage {
     uint amount = address(this).balance;
 
     (bool success, ) = msg.sender.call{value: amount}("");
-    require(success, "Failed to withdraw Matic");
+    require(success, "Failed to withdraw Zap");
   }
 
   function getAllNames() public view returns (string[] memory) {
