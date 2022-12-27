@@ -26,8 +26,8 @@ module.exports = {
       accounts: privateKeys.split(','),
     },
     mumbai: {
-      chainId: 80001,
-      url: `https://polygon-mumbai.g.alchemy.com/v2/${process.env.ALCHEMY_MUMBAI_API_KEY}`,
+      chainId: 5,
+      url: `https://goerli.infura.io/v3/e0e68356f80849068237b511949db1e9`,
       accounts: privateKeys.split(','),
     }
   },
